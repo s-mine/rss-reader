@@ -1,12 +1,17 @@
 #!/usr/bin/env python
 import cgi
 import cgitb
+import io
+import sys
+
 import feedparser
 
 # エラー内容をブラウザに表示x
 cgitb.enable()
+# CGI上での標準出力のエンコーディングをUTF-8に設定
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='UTF-8')
 # RSS取得対象
-RSS_URL = "https://gigazine.net/news/rss_2.0/"
+RSS_URL = 'https://gigazine.net/news/rss_2.0/'
 # 表示用フォーマット
 DISP_HTML = '''
 <!DOCTYPE html>
@@ -104,5 +109,5 @@ if form:
 else:
     result = ''
 
-print("Content-Type: text/html")
+print('Content-Type: text/html')
 print(DISP_HTML.replace('[[result]]', result))

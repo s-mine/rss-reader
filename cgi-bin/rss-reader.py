@@ -53,10 +53,14 @@ DISP_HTML = '''
             <option value="動画">動画</option>
         </select>
         <input type="submit" value="取得">
+        <input type="button" onclick="location.href='/cgi-bin/rss-reader.py'" value="リセット">
     </form>
     </div>
     <div id="result">
         [[result]]
+    </div>
+    <div>
+        <!-- <input type="button" onclick="location.href='/index.html'" value="TOPへ"> -->
     </div>
 </body>
 </html>

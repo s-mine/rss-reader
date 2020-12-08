@@ -29,3 +29,11 @@ hr {
 	padding-left:20px;
 	padding-right:20px;
 }
+
+.content {
+	padding: 20px 29px;
+}
+
+.highlight {
+	padding: 0px 10px;
+}

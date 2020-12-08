@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GIGAZINE RSSReader</title>
+    <link rel="icon" type="image/x-icon" href="/image/icon.png">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/styles/a11y-dark.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body> 
+    <a href="index.html">
+        <h1 id="siteTitle">GIGAZINE RSSReader</h1>
+    </a>
+    <hr >
+    <div>
+        <h3><a href="cgi-bin/rss-reader.py">アプリケーション本体ヘ</a></h3>
+    </div>
+
+    <div class="content textLeft">
+        <h2>概要</h2>
+        <p>
+            このWebアプリ「RSSReader(RSSリーダー)」はHTMLとPythonを組み合わせたものとなります。<br>
+            大雑把な流れを説明します。<br>
+            まず、あなたはカテゴリAを選択し、取得ボタンをクリックしました。<br>
+            この時、裏ではこういう動きをしています。<br>
+            <ol>
+                <li>WebブラウザはWebサーバに対して「カテゴリA」という値と「RSSReaderというプログラムを実行しろ！」という要求のセットを送信する</li>
+                <li>WebサーバはPythonでRSSReaderを実行(詳細は下記)し、その結果を取得する。
+                    <ol type="i">
+                        【RSSReaderの流れ】
+                        <li>ニュース記事集合を取得</li>
+                        <li>記事集合から「カテゴリA」と同じカテゴリ名の記事を検索</li>
+                        <li>必要な内容のみに絞り込み整形</li>
+                        <li>整形データをHTMLに埋め込む</li>
+                    </ol>
+                </li>
+                <li>WebサーバはWebブラウザに対して、結果(HTML)を送信する</li>
+                <li>Webブラウザは受け取った結果(HTML)を表示する</li>
+            </ol>
+            <ul>
+                <li>コードが簡単に書けるので読みやすい</li>
+                <li>プログラムをそのまま実行できる(=インタプリタ)</li>
+                <li>ライブラリが豊富</li>
+            </ul>
+            特に「ライブラリが豊富」というところで、アプリやゲームなど様々な開発がしやすい言語なのです。<br>
+            人工知能分野の機能が豊富なので、AI搭載ロボットなどのシステムにも使用されていたりします。<br>
+        </p>
+        <h2>RSSReaderのソースコード</h2>
+        <div class="highlight">
+            <pre><code class="python">#!/usr/bin/env python
+import cgi
+import cgitb
+import io
+import sys
+
+import feedparser
+
+# エラー内容をブラウザに表示　Pythonの処理中にエラーが発生した際に詳細を表示します。
+cgitb.enable()
+# CGI上での標準出力のエンコーディングをUTF-8に設定　この設定を入れることでファイルとプログラムの文字設定が揃い、文字化けを防いでいます。
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='UTF-8')
+# RSS取得対象　
+RSS_URL = 'https://gigazine.net/news/rss_2.0/'
+# 表示用フォーマット
+DISP_HTML = '''
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;GIGAZINE RSSReader&lt;/title&gt;
+    &lt;link rel="icon" type="image/x-icon" href="/image/icon.png"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="/css/style.css"/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;GIGAZINE RSSReader&lt;/h1&gt;
+    &lt;hr&gt;
+    &lt;div&gt;
+    &lt;form action="/cgi-bin/rss-reader.py" method="POST"&gt;
+        カテゴリ：
+        &lt;select name="category" required&gt;
+            &lt;option value=""&gt;&lt;/option&gt;
+            &lt;option value="アート"&gt;アート&lt;/option&gt;
+            &lt;option value="アニメ"&gt;アニメ&lt;/option&gt;
+            &lt;option value="インタビュー"&gt;インタビュー&lt;/option&gt;
+            &lt;option value="ウェブアプリ"&gt;ウェブアプリ&lt;/option&gt;
+            &lt;option value="お知らせ"&gt;お知らせ&lt;/option&gt;
+            &lt;option value="ゲーム"&gt;ゲーム&lt;/option&gt;
+            &lt;option value="コラム"&gt;コラム&lt;/option&gt;
+            &lt;option value="サイエンス"&gt;サイエンス&lt;/option&gt;
+            &lt;option value="セキュリティ"&gt;セキュリティ&lt;/option&gt;
+            &lt;option value="ソフトウェア"&gt;ソフトウェア&lt;/option&gt;
+            &lt;option value="デザイン"&gt;デザイン&lt;/option&gt;
+            &lt;option value="ネットサービス"&gt;ネットサービス&lt;/option&gt;
+            &lt;option value="ハードウェア"&gt;ハードウェア&lt;/option&gt;
+            &lt;option value="ピックアップ"&gt;ピックアップ&lt;/option&gt;
+            &lt;option value="ヘッドライン"&gt;ヘッドライン&lt;/option&gt;
+            &lt;option value="マンガ"&gt;マンガ&lt;/option&gt;
+            &lt;option value="メモ"&gt;メモ&lt;/option&gt;
+            &lt;option value="モバイル"&gt;モバイル&lt;/option&gt;
+            &lt;option value="レビュー"&gt;レビュー&lt;/option&gt;
+            &lt;option value="映画"&gt;映画&lt;/option&gt;
+            &lt;option value="試食"&gt;試食&lt;/option&gt;
+            &lt;option value="取材"&gt;取材&lt;/option&gt;
+            &lt;option value="乗り物"&gt;乗り物&lt;/option&gt;
+            &lt;option value="食"&gt;食&lt;/option&gt;
+            &lt;option value="生き物"&gt;生き物&lt;/option&gt;
+            &lt;option value="動画"&gt;動画&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;input type="submit" value="取得"&gt;
+        &lt;input type="button" onclick="location.href='/cgi-bin/rss-reader.py'" value="リセット"&gt;
+    &lt;/form&gt;
+    &lt;/div&gt;
+    &lt;div id="result"&gt;
+        [[result]]
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+'''
+DISP_STAT = '&lt;b&gt;[[category]]&lt;/b&gt;について、&lt;b&gt;[[count]]&lt;/b&gt;件の記事が見つかりました。\n\t\t'
+DISP_RESULT = ''' 
+&lt;h3&gt;&lt;a href="[[link]]"  target="_blank" rel="noopener noreferrer"&gt;[[title]]&lt;/a&gt;([[categories]])&lt;/h3&gt;\n\t\t
+&lt;p&gt;[[description]]&lt;/p&gt;&lt;br&gt;\n\t\t
+'''
+
+
+# RSS取得&amp;整形処理(指定されたカテゴリに一致する記事を取得)
+def read_rss_info(param):
+    articles = feedparser.parse(RSS_URL)
+    ret_rss = DISP_STAT
+    count = 0
+    for e in articles.entries:
+        if len(e.tags) == 0:
+            categories = ''
+        else:
+            categories = e.tags[0]['term'].rstrip(',')
+
+        if param in categories:
+            count += 1
+            ret_rss = ret_rss + DISP_RESULT
+            ret_rss = ret_rss.replace('[[link]]', e.link)
+            ret_rss = ret_rss.replace('[[title]]', e.title)
+            ret_rss = ret_rss.replace('[[categories]]', categories)
+            ret_rss = ret_rss.replace('[[description]]', e.description[:e.description.find('&lt;p&gt;')])
+
+    ret_rss = ret_rss.replace('[[category]]', param).replace('[[count]]', str(count))
+    return ret_rss
+
+
+# 画面表示&amp;取得ボタン押下時処理
+form = cgi.FieldStorage()
+if form:
+    category = form.getvalue('category').capitalize()
+    result = read_rss_info(category)
+
+else:
+    result = ''
+
+print('Content-Type: text/html')
+print(DISP_HTML.replace('[[result]]', result))
+            </code></pre>
+        </div>
+    
+        <h2>ソースコードの解説</h2>
+        <div class="highlight">
+            <pre><code class="python">#!/usr/bin/env python ・・・①
+import cgi
+import cgitb
+import io
+import sys
+
+import feedparser
+            </code></pre>
+            <p>
+                ・①と記述することで、「このプログラムを『/usr/bin/env』にあるPythonというプログラミング言語で、実行してください。」という意味になります。<br>
+                　環境によってはこの記載がないと実行されないため、原則は記述します。<br><br>
+                ・import～　はimport文と呼ばれ、ライブラリを読み込むために使われます。<br>
+                　ライブラリとは「ある目的のために特化した機能をまとめたもの」です。目的というのは、例えば以下のようなものがあります。<br>
+                　「数学の計算」・・・指数関数や三角関数、円周率などの様々な数学の関数をまとめている<br>
+                　「データ解析」・・・データの統計量を表示したりグラフ化したりの解析に役立つ機能をまとめている<br>
+                　「画像の処理」・・・画像の拡大縮小などの単純な操作、画像の読み込みや編集などの機能をまとめている<br><br>
+                
+                　通常では1000行でも難しいような高度な機能でも、ライブラリを使えばわずかな行で簡単に実現できてしまうのです。<br>
+                　今回は「cgi」cgitb」「io」「sys」「feedparser」の5つのライブラリを読み込んで使用しています。詳細は使用している箇所で随時説明します。<br>
+                　<br>
+                
+                <p hidden>
+                ライブラリは、Pythonをインストールした時に付属する「標準ライブラリ」と、
+                　外部の団体によって作成された「外部ライブラリ」があります。基本的な機能であれば「標準ライブラリ」、より専門的な機能であれば「外部ライブラリ」を使うことが多いです。
+                　
+                
+                </p>
+            </p>
+        </div>
+        <div class="highlight">
+            <pre><code class="python"># エラー内容をブラウザに表示
+cgitb.enable()
+# CGI上での標準出力のエンコーディングをUTF-8に設定　この設定を入れることでファイルとプログラムの文字設定が揃い、文字化けを防いでいます。
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='UTF-8')
+# RSS取得対象　
+RSS_URL = 'https://gigazine.net/news/rss_2.0/'
+            </code></pre>
+            <p>
+                プログラム内に「コメント文」という処理には使用されない文章を設定することができます。<br>
+                Pythonでは「」プログラミング言語によって
+            </p>
+        </div>
+
+
+
+
+        <div class="highlight">
+            <pre><code class="python">
+
+            </code></pre>
+            <p>
+
+            </p>
+        </div>
+    </div>
+</body>
+</html>

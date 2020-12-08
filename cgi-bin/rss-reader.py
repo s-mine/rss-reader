@@ -6,7 +6,7 @@ import sys
 
 import feedparser
 
-# エラー内容をブラウザに表示x
+# エラー内容をブラウザに表示
 cgitb.enable()
 # CGI上での標準出力のエンコーディングをUTF-8に設定
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='UTF-8')
@@ -23,8 +23,13 @@ DISP_HTML = '''
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
-    <h1>GIGAZINE RSSReader</h1>
+    <a href="../index.html">
+        <h1>GIGAZINE RSSReader</h1>
+    </a>
     <hr>
+    <div>
+        <h3><a href="../rss-reader-comment.html">ソースコード解説ヘ</a></h3>
+    </div>
     <div>
     <form action="/cgi-bin/rss-reader.py" method="POST">
         カテゴリ：
@@ -63,9 +68,6 @@ DISP_HTML = '''
     </div>
     <div id="result">
         [[result]]
-    </div>
-    <div>
-        <!-- <input type="button" onclick="location.href='/index.html'" value="TOPへ"> -->
     </div>
 </body>
 </html>

@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# ライブラリの読み込み
 import cgi
 import cgitb
 import io
@@ -12,7 +13,8 @@ cgitb.enable()
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='UTF-8')
 # RSS取得対象
 RSS_URL = 'https://gigazine.net/news/rss_2.0/'
-# 表示用フォーマット
+## 表示用フォーマット
+# 全体構成用HTML
 DISP_HTML = '''
 <!DOCTYPE html>
 <html>
@@ -72,7 +74,9 @@ DISP_HTML = '''
 </body>
 </html>
 '''
+# 取得結果の件数表示用HTML
 DISP_STAT = '<b>[[category]]</b>について、<b>[[count]]</b>件の記事が見つかりました。\n\t\t'
+# 取得結果の詳細表示用HTML
 DISP_RESULT = ''' 
 <h3><a href="[[link]]"  target="_blank" rel="noopener noreferrer">[[title]]</a>([[categories]])</h3>\n\t\t
 <p>[[description]]</p><br>\n\t\t
@@ -91,7 +95,7 @@ def read_rss_info(param):
             categories = e.tags[0]['term'].rstrip(',')
 
         if param in categories:
-            count += 1
+            count = count + 1
             ret_rss = ret_rss + DISP_RESULT
             ret_rss = ret_rss.replace('[[link]]', e.link)
             ret_rss = ret_rss.replace('[[title]]', e.title)

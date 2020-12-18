@@ -34,6 +34,13 @@ hr {
 	padding: 20px 29px;
 }
 
+/* 解説ページ用 */
+.imgFormat {
+	width: 60%;
+	float: right;
+}
+
+
 .highlight {
 	padding: 0px 10px;
 }

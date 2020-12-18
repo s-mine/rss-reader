@@ -20,52 +20,180 @@
 
     <div class="content textLeft">
         <h2>概要</h2>
-        <p>
-            このWebアプリ「RSSReader(RSSリーダー)」はHTMLとPythonを組み合わせたものとなります。<br>
-            大雑把な流れを説明します。<br>
-            まず、あなたはカテゴリAを選択し、取得ボタンをクリックしました。<br>
-            この時、裏ではこういう動きをしています。<br>
+        <div>
+            <figure class="textCenter">
+                <img class="imgFormat" src="image/cgi-image.png" alt="CGIの仕組み">
+            </figure>
+            「RSSReader」はプログラミング言語の"Python"を使ったWebアプリケーションです。<br>
+            Webアプリケーションは右図のような構成と流れで成り立つ技術です。<br><br>
+            まずは簡単にですがRSSReaderを実行するための全体の流れを説明します。<br>
+            例えば、ユーザが「サイエンス」を選択した後、「取得」ボタンをクリックしたとします。<br>
+            この時、裏では以下のような処理が行われています。<br>
             <ol>
-                <li>WebブラウザはWebサーバに対して「カテゴリA」という値と「RSSReaderというプログラムを実行しろ！」という要求のセットを送信する</li>
-                <li>WebサーバはPythonでRSSReaderを実行(詳細は下記)し、その結果を取得する。
+                <li>WebブラウザはWebサーバに対して以下のリクエスト情報を送信する
+                    <ul>
+                        <li>内容：「RSSReaderというプログラムを実行してください。」</li>
+                        <li>カテゴリ情報：サイエンス</li>
+                    </ul>
+                </li>
+                <li>WebサーバはRSSReaderを実行するためにPythonを起動する</li>
+                <li>PythonはRSSReaderを実行(詳細は下記)し、その結果をWebサーバに返す
                     <ol type="i">
                         【RSSReaderの流れ】
                         <li>ニュース記事集合を取得</li>
-                        <li>記事集合から「カテゴリA」と同じカテゴリ名の記事を検索</li>
+                        <li>記事集合から「カテゴリ」と同じカテゴリ名の記事を検索</li>
                         <li>必要な内容のみに絞り込み整形</li>
                         <li>整形データをHTMLに埋め込む</li>
                     </ol>
                 </li>
-                <li>WebサーバはWebブラウザに対して、結果(HTML)を送信する</li>
-                <li>Webブラウザは受け取った結果(HTML)を表示する</li>
+                <li>WebサーバはWebブラウザに対してレスポンス(結果）を送信する</li>
+                <li>Webブラウザは受け取った結果を表示する</li>
             </ol>
-            <ul>
-                <li>コードが簡単に書けるので読みやすい</li>
-                <li>プログラムをそのまま実行できる(=インタプリタ)</li>
-                <li>ライブラリが豊富</li>
-            </ul>
-            特に「ライブラリが豊富」というところで、アプリやゲームなど様々な開発がしやすい言語なのです。<br>
-            人工知能分野の機能が豊富なので、AI搭載ロボットなどのシステムにも使用されていたりします。<br>
-        </p>
-        <h2>RSSReaderのソースコード</h2>
+
+            以上が基本的な流れです。ほとんどのWebアプリケーションは基本的にはこの流れとなります。<sup>※1</sup><br>
+            何かを作成する時は、こういった構成や流れのイメージを掴むことが大切になります。<br><br>
+
+            本題はここから。「実際の『RSSReader』はどのように動いているのか？」を、ソースコード<sup>※2</sup>とともに説明します。
+            <p>
+                ※1　詳細で正確な仕組みを知りたい人は「HTTP 仕組み」等で検索してみてください。<br>
+                ※2　人がプログラミング言語を使って書いたプログラムの元となる文章のこと
+            </p>
+        </div>   
+        <h2>RSSReaderのソースコード解説</h2>
         <div class="highlight">
-            <pre><code class="python">#!/usr/bin/env python
+            <pre><code class="python">#!/usr/bin/env python　・・・①
+# ライブラリの読み込み　・・・②
 import cgi
 import cgitb
 import io
 import sys
 
 import feedparser
-
-# エラー内容をブラウザに表示　Pythonの処理中にエラーが発生した際に詳細を表示します。
-cgitb.enable()
-# CGI上での標準出力のエンコーディングをUTF-8に設定　この設定を入れることでファイルとプログラムの文字設定が揃い、文字化けを防いでいます。
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='UTF-8')
-# RSS取得対象　
-RSS_URL = 'https://gigazine.net/news/rss_2.0/'
-# 表示用フォーマット
+            </code></pre>
+            <p>
+                ・① 「このプログラムを『/usr/bin/env』にあるPythonというプログラミング言語で、実行してください。」という意味になります。<br>
+                　WebアプリケーションはWebサーバーによって実行されるため、明示的に記述する必要があります。<br>
+                ・② ライブラリを読み込むときはimport文を使います。<br>
+                　ライブラリとは「ある目的のために特化した機能をまとめたもの」です。目的というのは、例えば以下のようなものがあります。<br>
+                　「数学の計算」・・・指数関数や三角関数、円周率などの様々な数学の関数をまとめている<br>
+                　「データ解析」・・・データの統計量を表示したりグラフ化したりの解析に役立つ機能をまとめている<br>
+                　「画像の処理」・・・画像の拡大縮小などの単純な操作、画像の読み込みや編集などの機能をまとめている<br>                
+                　※通常では1000行でも難しいような高度な機能でも、ライブラリを使えばわずかな行で簡単に実現できてしまうのです。<br>
+                　今回は「cgi」「cgitb」「io」「sys」「feedparser」の5つのライブラリを読み込んで使用しています。
+            </p>
+            <br>
+        </div>
+        <div class="highlight">
+            <pre><code class="python"># エラー内容をブラウザに表示
+cgitb.enable()　・・・③
+# CGI上での標準出力のエンコーディングをUTF-8に設定
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='UTF-8')　・・・④
+# RSS取得対象
+RSS_URL = 'https://gigazine.net/news/rss_2.0/'　・・・⑤
+            </code></pre>
+            <p>
+                ・③ CGIの処理実行時にエラーが発生した際、詳細をWebページに表示します。<br>
+                ・④ 標準の文字コードは日本語に対応していないため、変更する必要があります。この設定がない場合は文字化けが発生します。<br>
+                ・⑤ RSS_URLという箱に、GIGAZINのRSS形式データのURLを格納しています。この、イコールの左辺にある「RSS_URL」などの箱のことを変数と呼びます。<br>
+                →このURLに実際にアクセスしてみましょう。何となくでも法則があることが分かると以降の処理が納得しやすくなると思います。
+            </p>
+            <br>
+        </div>
+        <div class="highlight">
+            <pre><code class="python">## 表示用フォーマット
+# 全体構成用HTML
 DISP_HTML = '''
-&lt;!DOCTYPE html&gt;
+（省略）
+'''　・・・⑥
+# 取得結果の件数表示用HTML
+DISP_STAT = '&lt;b&gt;[[category]]&lt;/b&gt;について、&lt;b&gt;[[count]]&lt;/b&gt;件の記事が見つかりました。\n\t\t'　・・・⑦
+# 取得結果の詳細表示用HTML
+DISP_RESULT = '''
+&lt;h3&gt;&lt;a href="[[link]]"  target="_blank" rel="noopener noreferrer"&gt;[[title]]&lt;/a&gt;([[categories]])&lt;/h3&gt;\n\t\t
+&lt;p&gt;[[description]]&lt;/p&gt;&lt;br&gt;\n\t\t
+'''　・・・⑧
+            </code></pre>
+            <p>
+                ・⑥ 変数DISP_HTMLに「'''」で囲んだ文字列を格納しています。<br>
+                ・⑦ 変数DISP_STATに「'」で囲んだ文字列を格納しています。「'''」は複数行用、「'」は一行用という違いです。<br>
+                ・⑧ 変数DISP_RESULTに「'''」で囲んだ文字列を格納しています。<br>
+                ※上記は全て「Pythonで処理した結果を埋め込み、表示するために使うHTML」です。<br>
+                　DISP_HTMLはページ全体の構成用ですが、DISP_STATは取得結果の件数、DISP_RESULTは取得結果の詳細をそれぞれ設定する必要があるため別に定義しています。<br>
+                ※「\n」は改行、「\t」はタブ文字を表しています。表示ページのHTMLを綺麗に揃えるために使っています。無くても処理自体に問題は起きません。
+            </p>
+            <br>
+        </div>
+        <div class="highlight">
+            <pre><code class="python"># RSS取得&amp;整形処理(指定されたカテゴリに一致する記事を取得)  
+def read_rss_info(param):　・・・⑨
+    articles = feedparser.parse(RSS_URL)　・・・⑩
+    ret_rss = DISP_STAT　・・・⑪
+    count = 0　・・・⑫
+    for e in articles.entries:　・・・⑬
+        # 対象記事にカテゴリが設定されていない場合は変数categoriesに空文字を設定
+        if len(e.tags) == 0:　・・・⑭
+            categories = ''
+        else:　・・・⑭
+            # 記事に設定されているカテゴリセット(カンマ区切り)を設定。（後の処理で扱いやすくするため、最後に付いているカンマはrstrip(',')で取り除く）
+            categories = e.tags[0]['term'].rstrip(',')
+
+        if param in categories:　・・・⑮
+            count = count + 1
+            ret_rss = ret_rss + DISP_RESULT
+            ret_rss = ret_rss.replace('[[link]]', e.link)
+            ret_rss = ret_rss.replace('[[title]]', e.title)
+            ret_rss = ret_rss.replace('[[categories]]', categories)
+            ret_rss = ret_rss.replace('[[description]]', e.description[:e.description.find('&lt;p&gt;')])
+
+    ret_rss = ret_rss.replace('[[category]]', param).replace('[[count]]', str(count))
+    return ret_rss
+
+            </code></pre>
+            <p>
+                ・⑨ 「def 関数名(引数):」と記述したものをdef文と呼びます。def文を使うことで独自の関数を定義することができます。インデントを増やしている箇所(文字開始位置が下がった位置から始まっているまとまり)が実際の処理内容になります。<br>
+                　このread_rss_info関数は、指定されたカテゴリに一致する記事を取得し、HTML用に整えるための処理が書かれています<br>
+                　※関数は数学などで登場したものと意味合いは同じで、「与えられた値(引数)をもとに処理を行い、結果を返す」ものです。<br>
+                ・⑩ feedparserライブラリに属するparse関数の処理結果を、変数articlesに格納しています。parse関数は引数として与えられたRSS_URL(RSS形式データのURL)を解析してプログラムで扱いやすい形式に変換しています。<br>
+                ・⑪ 変数ret_rssには「取得結果の件数表示用のHTML」を格納しています。最終的にはread_rss_info関数の結果として使用される変数のため、以降の処理で何度も登場しています。<br>
+                ・⑫ 変数countは指定されたカテゴリに一致した件数を設定するための箱です。カウント前なので初期値に0を設定しています。<br>
+                ・⑬ 「for 変数 in リスト:」と記述したものをfor文と呼び、繰り返し処理のために使う構文です。<br>
+                　具体的には、まずリストの要素を1つ取り出して変数に設定し、インデントを増やした箇所の処理を実行します。処理が終わったらリストの次の要素を取り出して変数に設定し～ という風にリストの要素数だけ処理を繰り返せます。<br>
+                　articles.entriesはRSSの内容のまとまりです。それを一件ずつ変数eに格納しているということになります。<br>
+                ・⑭ 「if 条件式:」と記述したものをif文、「else:」と記述したものをelse節と呼びます。条件分岐のために使う構文です。if文の条件式が満たされている場合はその直下の処理、それ以外の場合はelse節の直下の処理を実行します。<br>
+                　今回の条件式「len(e.tags)」について説明すると、len(リスト)と書くとリストの長さ(length)を算出できます。e.tagsは記事のカテゴリなどの情報が入っているリストになります。<br>
+                　つまり、このif文の意味は、「記事のカテゴリなどの情報が入っているリストが空っぽの場合は、変数categoriesに''(空文字)を設定する。それ以外の場合は、変数categoriesにカテゴリセットを設定する。」という意味になります。<br>
+                　ここで空文字を設定することで以降の処理に入れないようにします。<br>
+                ・⑮ 「if param in categories:」はカテゴリセットにユーザが指定したカテゴリが含まれている場合 = 条件を満たしている、ということになります。
+
+                記事を一つずつ確認し、指定されたカテゴリの記事なら
+                
+
+                
+            </p>
+        </div>
+        <div class="highlight">
+            <pre><code class="python"># 画面表示&amp;取得ボタン押下時処理
+form = cgi.FieldStorage()
+if form:
+    # 変数categoryにユーザが選択したカテゴリ情報を格納しています。HTMLの中で「category」という名前で定義することで紐づけています。
+    category = form.getvalue('category').capitalize()
+    # 右辺で関数「read_rss_info」を呼び出しています。この時、ユーザが設定したカテゴリを関数も渡します。左辺では変数resultにこの処理結果を格納しています。
+    result = read_rss_info(category)
+
+else:
+    result = ''
+
+print('Content-Type: text/html')
+print(DISP_HTML.replace('[[result]]', result))
+            </code></pre>
+            <p>
+                <br>
+
+            </p>
+        </div>
+
+        <div class="highlight">
+            <pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
     &lt;meta charset="utf-8"&gt;
@@ -113,108 +241,19 @@ DISP_HTML = '''
     &lt;/form&gt;
     &lt;/div&gt;
     &lt;div id="result"&gt;
-        [[result]]
-    &lt;/div&gt;
+        &lt;b&gt;[[category]]&lt;/b&gt;について、&lt;b&gt;[[count]]&lt;/b&gt;件の記事が見つかりました。
+
+        &lt;h3&gt;&lt;a href="[[link]]"  target="_blank" rel="noopener noreferrer"&gt;[[title]]&lt;/a&gt;([[categories]])&lt;/h3&gt;
+        
+        &lt;p&gt;[[description]]&lt;/p&gt;&lt;br&gt;
+        
+        &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-'''
-DISP_STAT = '&lt;b&gt;[[category]]&lt;/b&gt;について、&lt;b&gt;[[count]]&lt;/b&gt;件の記事が見つかりました。\n\t\t'
-DISP_RESULT = ''' 
-&lt;h3&gt;&lt;a href="[[link]]"  target="_blank" rel="noopener noreferrer"&gt;[[title]]&lt;/a&gt;([[categories]])&lt;/h3&gt;\n\t\t
-&lt;p&gt;[[description]]&lt;/p&gt;&lt;br&gt;\n\t\t
-'''
-
-
-# RSS取得&amp;整形処理(指定されたカテゴリに一致する記事を取得)
-def read_rss_info(param):
-    articles = feedparser.parse(RSS_URL)
-    ret_rss = DISP_STAT
-    count = 0
-    for e in articles.entries:
-        if len(e.tags) == 0:
-            categories = ''
-        else:
-            categories = e.tags[0]['term'].rstrip(',')
-
-        if param in categories:
-            count += 1
-            ret_rss = ret_rss + DISP_RESULT
-            ret_rss = ret_rss.replace('[[link]]', e.link)
-            ret_rss = ret_rss.replace('[[title]]', e.title)
-            ret_rss = ret_rss.replace('[[categories]]', categories)
-            ret_rss = ret_rss.replace('[[description]]', e.description[:e.description.find('&lt;p&gt;')])
-
-    ret_rss = ret_rss.replace('[[category]]', param).replace('[[count]]', str(count))
-    return ret_rss
-
-
-# 画面表示&amp;取得ボタン押下時処理
-form = cgi.FieldStorage()
-if form:
-    category = form.getvalue('category').capitalize()
-    result = read_rss_info(category)
-
-else:
-    result = ''
-
-print('Content-Type: text/html')
-print(DISP_HTML.replace('[[result]]', result))
-            </code></pre>
-        </div>
-    
-        <h2>ソースコードの解説</h2>
-        <div class="highlight">
-            <pre><code class="python">#!/usr/bin/env python ・・・①
-import cgi
-import cgitb
-import io
-import sys
-
-import feedparser
-            </code></pre>
-            <p>
-                ・①と記述することで、「このプログラムを『/usr/bin/env』にあるPythonというプログラミング言語で、実行してください。」という意味になります。<br>
-                　環境によってはこの記載がないと実行されないため、原則は記述します。<br><br>
-                ・import～　はimport文と呼ばれ、ライブラリを読み込むために使われます。<br>
-                　ライブラリとは「ある目的のために特化した機能をまとめたもの」です。目的というのは、例えば以下のようなものがあります。<br>
-                　「数学の計算」・・・指数関数や三角関数、円周率などの様々な数学の関数をまとめている<br>
-                　「データ解析」・・・データの統計量を表示したりグラフ化したりの解析に役立つ機能をまとめている<br>
-                　「画像の処理」・・・画像の拡大縮小などの単純な操作、画像の読み込みや編集などの機能をまとめている<br><br>
-                
-                　通常では1000行でも難しいような高度な機能でも、ライブラリを使えばわずかな行で簡単に実現できてしまうのです。<br>
-                　今回は「cgi」cgitb」「io」「sys」「feedparser」の5つのライブラリを読み込んで使用しています。詳細は使用している箇所で随時説明します。<br>
-                　<br>
-                
-                <p hidden>
-                ライブラリは、Pythonをインストールした時に付属する「標準ライブラリ」と、
-                　外部の団体によって作成された「外部ライブラリ」があります。基本的な機能であれば「標準ライブラリ」、より専門的な機能であれば「外部ライブラリ」を使うことが多いです。
-                　
-                
-                </p>
-            </p>
-        </div>
-        <div class="highlight">
-            <pre><code class="python"># エラー内容をブラウザに表示
-cgitb.enable()
-# CGI上での標準出力のエンコーディングをUTF-8に設定　この設定を入れることでファイルとプログラムの文字設定が揃い、文字化けを防いでいます。
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='UTF-8')
-# RSS取得対象　
-RSS_URL = 'https://gigazine.net/news/rss_2.0/'
             </code></pre>
             <p>
                 プログラム内に「コメント文」という処理には使用されない文章を設定することができます。<br>
-                Pythonでは「」プログラミング言語によって
-            </p>
-        </div>
-
-
-
-
-        <div class="highlight">
-            <pre><code class="python">
-
-            </code></pre>
-            <p>
+                Pythonでは「#」から改行されるまでの範囲が適用されます。
 
             </p>
         </div>

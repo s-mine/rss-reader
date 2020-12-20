@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:admin="http://webns.net/mvcb/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:atom="http://www.w3.org/2005/Atom">
+
+    <channel>
+    <atom:link href="http://gigazine.net/news/rss_2.0/" rel="self" type="application/rss+xml" />
+    <title>GIGAZINE</title>
+    <link>https://gigazine.net/</link>
+    <description>日々のあらゆる雑談に役立つネタを提供するIT系ニュースサイト。起きている限りほぼ毎日更新中。</description>
+    <dc:language>ja-JP</dc:language>
+    
+    <dc:rights>Copyright 2020</dc:rights>
+    <dc:date>2020-12-19T21:00:00+09:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.pmachine.com/" />
+    
+
+    <item>
+      <title>Nintendo Switchでサイコロ運を味方に付けてランダム生成されるダンジョンを攻略する「Dicey Dungeons」をプレイしてみた</title>
+      <link>https://gigazine.net/news/20201219&#45;dicey&#45;dungeons/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201219-dicey-dungeons/</guid>
+      <description><![CDATA[異なる能力を持つ6人のキャラクターを使って、サイコロの出目に応じて戦いながらダンジョンの最深部を目指すゲーム「Dicey Dungeons」が2020年12月16日にNintendo Switchで登場しました。キャラクターの能力に合わせてデッキを構築する戦略要素と、サイコロの出目という運要素が融合した戦闘がどんなものか気になったので、実際にプレイしてゲーム性を確かめてみました。<p><b><a href="https://gigazine.net/news/20201219&#45;dicey&#45;dungeons/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Sat, 19 Dec 2020 21:00:00 +0900</pubDate>
+      <dc:subject>レビュー, ゲーム,</dc:subject>
+      <dc:date>2020-12-19T21:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>投与ミスで高い効果を発揮した新型コロナワクチンなど「偶然見つかった医学的発見」5選</title>
+      <link>https://gigazine.net/news/20201219&#45;medical&#45;discoveries&#45;vaccine/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201219-medical-discoveries-vaccine/</guid>
+      <description><![CDATA[イギリスのオックスフォード大学と大手製薬会社・アストラゼネカが開発した新型コロナウイルスワクチン「ChAdOx 1 nCoV-2019」は、臨床試験で「有効率62％」とやや控えめな結果が出ましたが、別の試験では「有効率90％」と非常に有望なデータも得られました。この有望な結果につながったとある「偶然」を含め、ケガの功名や偶然から人類史に残る発見につながった逸話をランカスター大学臨床解剖学学習センターのアダム・テイラー所長が5つにまとめています。<p><b><a href="https://gigazine.net/news/20201219&#45;medical&#45;discoveries&#45;vaccine/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Sat, 19 Dec 2020 20:00:00 +0900</pubDate>
+      <dc:subject>サイエンス,</dc:subject>
+      <dc:date>2020-12-19T20:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>格闘技の判定勝ちは「とにかくたくさん攻撃を繰り出した方が有利」と判明</title>
+      <link>https://gigazine.net/news/20201219&#45;decision&#45;sport&#45;focus&#45;vigour&#45;skill/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201219-decision-sport-focus-vigour-skill/</guid>
+      <description><![CDATA[ボクシングやレスリング、総合格闘技(MMA)などの格闘技では、相手を打ち倒す「ノックアウト」の他に、「判定」で勝敗を付けることがよくあります。プリマス大学生物海洋科学部の研究チームが、人間はスポーツの勝敗を判定する時、「どれだけ正確に攻撃しているか」という技術よりも「どれだけ積極的に攻撃しているか」というモチベーションを重視しがちだという研究結果を発表しました。<p><b><a href="https://gigazine.net/news/20201219&#45;decision&#45;sport&#45;focus&#45;vigour&#45;skill/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Sat, 19 Dec 2020 19:00:00 +0900</pubDate>
+      <dc:subject>サイエンス,</dc:subject>
+      <dc:date>2020-12-19T19:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>タイルを獲得しパズルのようにボードを埋めていく2人対戦ボードゲーム「パッチワーク：冬の贈り物」をプレイ＆同封されていた型でクッキーを作ってみた</title>
+      <link>https://gigazine.net/news/20201219&#45;patchwork&#45;winter/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201219-patchwork-winter/</guid>
+      <description><![CDATA[布を縫い合わせて1枚の大きな布を作る手芸「パッチワーク」をテーマにしたゲームが「パッチワーク：冬の贈り物」です。基本となるボードゲーム「パッチワーク」が冬仕様になり、さらにおまけとしてクッキーの型もついてくるとのことで、実際にプレイしクッキーも作ってみました。<p><b><a href="https://gigazine.net/news/20201219&#45;patchwork&#45;winter/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Sat, 19 Dec 2020 18:00:00 +0900</pubDate>
+      <dc:subject>レビュー,</dc:subject>
+      <dc:date>2020-12-19T18:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>GitHubがGit操作時のパスワード認証を廃止、今後はトークンによる認証が必須に</title>
+      <link>https://gigazine.net/news/20201219&#45;github&#45;token&#45;git&#45;operations/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201219-github-token-git-operations/</guid>
+      <description><![CDATA[GitHubがコマンドラインでのGit操作時の認証方式のひとつである、パスワード認証を廃止すると発表しました。同サービスは2020年11月にREST API利用時におけるパスワード認証を廃止し、二段階認証などのトークン認証に移行しており、今回の発表はその範囲を拡大した形となります。<p><b><a href="https://gigazine.net/news/20201219&#45;github&#45;token&#45;git&#45;operations/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Sat, 19 Dec 2020 14:00:00 +0900</pubDate>
+      <dc:subject>ネットサービス, セキュリティ,</dc:subject>
+      <dc:date>2020-12-19T14:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>社会のジェンダー規範が男女の健康や給与の違いに影響することを示す2つの研究結果が発表される</title>
+      <link>https://gigazine.net/news/20201219&#45;gender&#45;attitudes&#45;affect&#45;health&#45;career/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201219-gender-attitudes-affect-health-career/</guid>
+      <description><![CDATA[男性と女性では外見が違うだけでなく、男性は女性より寿命が短いという生物学的差異や、収入が多いといった社会的傾向があります。新たに発表された2つの研究では、性別による健康や収入の違いが生物学的な差異ではなく、地域社会におけるジェンダー規範や自分自身の能力に関する自信によって変化することが示されました。<p><b><a href="https://gigazine.net/news/20201219&#45;gender&#45;attitudes&#45;affect&#45;health&#45;career/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Sat, 19 Dec 2020 12:00:00 +0900</pubDate>
+      <dc:subject>サイエンス,</dc:subject>
+      <dc:date>2020-12-19T12:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>タイのヤドカリが「貝殻不足」で困窮、政府は貝殻を散布して対応</title>
+      <link>https://gigazine.net/news/20201219&#45;thailand&#45;homeless&#45;hermit&#45;crabs/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201219-thailand-homeless-hermit-crabs/</guid>
+      <description><![CDATA[新型コロナウイルス感染症(COVID-19)の世界的流行による観光客の減少を受け、タイではヤドカリの個体数が急増。その結果、「宿のないヤドカリ」が多数生まれています。この事態を重く見たタイ政府は貝殻をバラまくという対応を行いました。<p><b><a href="https://gigazine.net/news/20201219&#45;thailand&#45;homeless&#45;hermit&#45;crabs/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Sat, 19 Dec 2020 09:00:00 +0900</pubDate>
+      <dc:subject>生き物,</dc:subject>
+      <dc:date>2020-12-19T09:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>USJにオープンする任天堂の新エリア「スーパー・ニンテンドー・ワールド」のクッパ城やワンナップ・ファクトリーなどの一部詳細が明らかに</title>
+      <link>https://gigazine.net/news/20201219&#45;super&#45;nintendo&#45;world&#45;direct/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201219-super-nintendo-world-direct/</guid>
+      <description><![CDATA[ユニバーサル・スタジオ・ジャパン(USJ)にオープンする新エリア「スーパー・ニンテンドー・ワールド」内にある、マリオカートのレースに参加できる「クッパ城」、グッズショップの「ワンナップ・ファクトリー」、食事が楽しめる「キノピオ・カフェ」などの詳細が明らかになりました。<p><b><a href="https://gigazine.net/news/20201219&#45;super&#45;nintendo&#45;world&#45;direct/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Sat, 19 Dec 2020 08:03:00 +0900</pubDate>
+      <dc:subject>動画,</dc:subject>
+      <dc:date>2020-12-19T08:03:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>アルツハイマー病に関連するタンパク質が概日リズムによって調節されていることが判明</title>
+      <link>https://gigazine.net/news/20201218&#45;alzheimer&#45;biomarker&#45;regulated&#45;sleep&#45;cycle/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-alzheimer-biomarker-regulated-sleep-cycle/</guid>
+      <description><![CDATA[認知症の一種であるアルツハイマー病は睡眠不足との関連が指摘されており、アルツハイマー病の患者は睡眠に問題を抱えるケースが多いことも知られています。ワシントン大学の研究チームが行った新たな研究では、アルツハイマー病のバイオマーカーであるCHI3L1(YKL-40)と体内時計(概日リズム)との関係や、YKL-40がアルツハイマー病の症状に及ぼす影響について明らかにされました。<p><b><a href="https://gigazine.net/news/20201218&#45;alzheimer&#45;biomarker&#45;regulated&#45;sleep&#45;cycle/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 23:00:00 +0900</pubDate>
+      <dc:subject>サイエンス,</dc:subject>
+      <dc:date>2020-12-18T23:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>上から下までチョコ尽くしなチョコ好きのためのチョコアイス「明治 エッセルスーパーカップSweet’s 4層仕立てのガトーショコラ」試食レビュー</title>
+      <link>https://gigazine.net/news/20201218&#45;meiji&#45;essel&#45;supercup&#45;sweets&#45;gateau&#45;chocolat/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-meiji-essel-supercup-sweets-gateau-chocolat/</guid>
+      <description><![CDATA[とろっとした食感のチョコソースを2種類のチョコアイスに挟んだガトーショコラ風アイス「明治 エッセルスーパーカップSweet’s 4層仕立てのガトーショコラ」が2020年12月21日(月)から登場します。今回一足先に味わえる機会を得たので、実際に食べてみました。<p><b><a href="https://gigazine.net/news/20201218&#45;meiji&#45;essel&#45;supercup&#45;sweets&#45;gateau&#45;chocolat/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 22:00:00 +0900</pubDate>
+      <dc:subject>試食,</dc:subject>
+      <dc:date>2020-12-18T22:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>結局「新型コロナウイルス感染症とインフルエンザ」を比べるとどっちがどれだけ危険なのか？</title>
+      <link>https://gigazine.net/news/20201218&#45;covid&#45;19&#45;seasonal&#45;influenza&#45;risk&#45;death/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-covid-19-seasonal-influenza-risk-death/</guid>
+      <description><![CDATA[新型コロナウイルス感染症(COVID-19)が発見されてから1年が経過しようとしている2020年12月15日に、COVID-19と季節性インフルエンザを完全に条件をそろえた均一なデータで比較した研究結果が、イギリスの医学誌British Medical Journalに掲載されました。この論文により、COVID-19とインフルエンザの死亡リスクや症状の違いが改めて浮き彫りとなっています。<p><b><a href="https://gigazine.net/news/20201218&#45;covid&#45;19&#45;seasonal&#45;influenza&#45;risk&#45;death/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 21:00:00 +0900</pubDate>
+      <dc:subject>サイエンス,</dc:subject>
+      <dc:date>2020-12-18T21:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>新型コロナウイルスが脳に侵入している可能性が高いという研究結果</title>
+      <link>https://gigazine.net/news/20201218&#45;coronavirus&#45;enters&#45;the&#45;brain/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-coronavirus-enters-the-brain/</guid>
+      <description><![CDATA[新型コロナウイルス感染症(COVID-19)は発熱・喉の痛み・せきなどが主な症状だとされていますが、脳にも深刻な影響を与えるという事例がたびたび報告されています。COVID-19が脳に与える影響について、ワシントン大学の研究チームが新たな研究結果を発表しました。<p><b><a href="https://gigazine.net/news/20201218&#45;coronavirus&#45;enters&#45;the&#45;brain/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 20:00:00 +0900</pubDate>
+      <dc:subject>サイエンス,</dc:subject>
+      <dc:date>2020-12-18T20:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>PornhubやRedTubeなど人気ポルノサイトを運営する企業の正体とは？</title>
+      <link>https://gigazine.net/news/20201218&#45;pornhub&#45;redtube&#45;mindgeek/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-pornhub-redtube-mindgeek/</guid>
+      <description><![CDATA[PornhubやRedTubeといった人気ポルノサイトは、あるひとつの企業により運営されています。そんな人気ポルノサイトの背後に存在する企業の実態に、イギリスの経済紙であるFinancial Timesが迫っています。<p><b><a href="https://gigazine.net/news/20201218&#45;pornhub&#45;redtube&#45;mindgeek/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 19:00:00 +0900</pubDate>
+      <dc:subject>ネットサービス,</dc:subject>
+      <dc:date>2020-12-18T19:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>2020年12月18日のヘッドラインニュース</title>
+      <link>https://gigazine.net/news/20201218&#45;headline/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-headline/</guid>
+      <description><![CDATA[総監督・押井守、監督・西村純二による完全新作アニメ「ぶらどらぶ」の第1話特別編が、YouTubeで公開されました。<p><b><a href="https://gigazine.net/news/20201218&#45;headline/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 18:10:00 +0900</pubDate>
+      <dc:subject>ヘッドライン,</dc:subject>
+      <dc:date>2020-12-18T18:10:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>「Amazonで5つ星レビューを書いてくれたらギフトカードプレゼント」という販売者に対するレビューを却下されたとユーザーが告発</title>
+      <link>https://gigazine.net/news/20201218&#45;amazon&#45;paid&#45;review/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-amazon-paid-review/</guid>
+      <description><![CDATA[「もし購入した製品を気に入ったら、ぜひ5つ星をつけてください。そのスクリーンショットを送ってくれたら10ドル(約1000円)分のAmazonギフトカードをお送りします」というカードを発見したAmazonユーザーが、この件を指摘するレビューを書いたところ、Amazonに掲載を却下されたと告発しています。<p><b><a href="https://gigazine.net/news/20201218&#45;amazon&#45;paid&#45;review/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 16:00:00 +0900</pubDate>
+      <dc:subject>メモ, ネットサービス,</dc:subject>
+      <dc:date>2020-12-18T16:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>MicrosoftのAIが「高品質のチートス」を製造するために活用されようとしている</title>
+      <link>https://gigazine.net/news/20201218&#45;microsoft&#45;ai&#45;enabled&#45;perfect&#45;cheetos/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-microsoft-ai-enabled-perfect-cheetos/</guid>
+      <description><![CDATA[ペプシコのお菓子ブランド・フリトレーが製造・販売するスナック菓子の「チートス」は、世界40カ国以上で販売される人気のお菓子です。ペプシコはチートスの品質を保つプロセスを効率化するため、Microsoftの産業向けAI開発プラットフォーム・Project Bonsaiを用いています。<p><b><a href="https://gigazine.net/news/20201218&#45;microsoft&#45;ai&#45;enabled&#45;perfect&#45;cheetos/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 15:05:00 +0900</pubDate>
+      <dc:subject>ソフトウェア, 食,</dc:subject>
+      <dc:date>2020-12-18T15:05:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>「Appleがインターネットを悪い方に変える」とFacebookが新聞に全面広告を出す</title>
+      <link>https://gigazine.net/news/20201218&#45;facebook&#45;criticizes&#45;apple&#45;newspaper/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-facebook-criticizes-apple-newspaper/</guid>
+      <description><![CDATA[Facebookが、ウォール・ストリート・ジャーナル、ニューヨーク・タイムズ、ワシントン・ポストといった大手新聞に「Appleがインターネットを悪い方に変える」という内容の全面広告を掲載しました。広告の中でFacebookは、Appleの新しいソフトウェアアップデートによって、これまで無料で得られていたインターネットの情報が無料で得られなくなると人々に警告しました。<p><b><a href="https://gigazine.net/news/20201218&#45;facebook&#45;criticizes&#45;apple&#45;newspaper/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 14:00:00 +0900</pubDate>
+      <dc:subject>ソフトウェア, ネットサービス, ウェブアプリ,</dc:subject>
+      <dc:date>2020-12-18T14:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>GoogleのIoT用プラットフォーム「Android Things」が終了へ、IoT向け汎用OSの野望は軌道に乗らず失速</title>
+      <link>https://gigazine.net/news/20201218&#45;google&#45;android&#45;things&#45;shut&#45;down/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-google-android-things-shut-down/</guid>
+      <description><![CDATA[GoogleがIoT用の汎用OSとして開発を進めていた「Android Things」のFAQページで、プロジェクト継続を断念する方針を発表しました。Android Thingsは、2019年2月の時点で「開発意欲が失われているのではないか」との見方が強まっていました。<p><b><a href="https://gigazine.net/news/20201218&#45;google&#45;android&#45;things&#45;shut&#45;down/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 13:00:00 +0900</pubDate>
+      <dc:subject>ソフトウェア,</dc:subject>
+      <dc:date>2020-12-18T13:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>Appleのティム・クックCEOとクレイグ・フェデリギ上級副社長がEpic Gamesとの裁判に出廷へ</title>
+      <link>https://gigazine.net/news/20201218&#45;tim&#45;cook&#45;testify&#45;epic&#45;case/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-tim-cook-testify-epic-case/</guid>
+      <description><![CDATA[Appleのティム・クックCEOとソフトウェアエンジニアリング担当上級副社長のクレイグ・フェデリギ氏がEpic Gamesとの裁判に出廷することが決定しました。<p><b><a href="https://gigazine.net/news/20201218&#45;tim&#45;cook&#45;testify&#45;epic&#45;case/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 12:30:00 +0900</pubDate>
+      <dc:subject>メモ,</dc:subject>
+      <dc:date>2020-12-18T12:30:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>アリババが「ウイグル人を識別する顔認識クラウドサービス」を提供していたとの指摘</title>
+      <link>https://gigazine.net/news/20201218&#45;alibaba&#45;uyghur&#45;face&#45;recognition/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-alibaba-uyghur-face-recognition/</guid>
+      <description><![CDATA[中国はイスラム教を信仰する少数民族のウイグル人を厳しく弾圧しているとして世界中から非難されており、監視カメラやマルウェアなどで新疆(しんきょう)ウイグル自治区のウイグル人を監視していたことも明らかとなっています。新たな調査により、大手ECサイトやクラウドサービスを展開するアリババが「ウイグル人を識別する顔認識ソフト」を開発したことが判明しました。<p><b><a href="https://gigazine.net/news/20201218&#45;alibaba&#45;uyghur&#45;face&#45;recognition/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 12:20:00 +0900</pubDate>
+      <dc:subject>ソフトウェア,</dc:subject>
+      <dc:date>2020-12-18T12:20:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>Googleが検索市場に関する独禁法違反で提訴される、わずか2カ月で3回目の提訴</title>
+      <link>https://gigazine.net/news/20201218&#45;google&#45;search&#45;dominance&#45;antitrust&#45;lawsuit/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-google-search-dominance-antitrust-lawsuit/</guid>
+      <description><![CDATA[アメリカの38州の司法当局がGoogleを「検索における独占的地位を乱用し、競争を阻害している」として訴えました。アメリカの司法当局が独占禁止法違反でGoogleを訴えたのは、わずか2カ月で3回目となります。<p><b><a href="https://gigazine.net/news/20201218&#45;google&#45;search&#45;dominance&#45;antitrust&#45;lawsuit/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 12:10:00 +0900</pubDate>
+      <dc:subject>ネットサービス,</dc:subject>
+      <dc:date>2020-12-18T12:10:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>大根おろしたっぷりでさっぱりジューシーな味わいのやよい軒「和風おろしハンバーグ定食」を食べてみた</title>
+      <link>https://gigazine.net/news/20201218&#45;yayoiken&#45;wafuu&#45;oroshi&#45;hamburg/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-yayoiken-wafuu-oroshi-hamburg/</guid>
+      <description><![CDATA[しょうゆベースのたれと大根おろしがたっぷりのった「和風おろしハンバーグ定食」が、やよい軒から2020年12月18日より登場しています。和風の味付けのハンバーグが、ご飯と合うのか実際に食べて確かめてみました。<p><b><a href="https://gigazine.net/news/20201218&#45;yayoiken&#45;wafuu&#45;oroshi&#45;hamburg/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 11:55:00 +0900</pubDate>
+      <dc:subject>試食,</dc:subject>
+      <dc:date>2020-12-18T11:55:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>政府機関への大規模サイバー攻撃が核兵器関連の組織やMicrosoftにも迫っていたことが判明</title>
+      <link>https://gigazine.net/news/20201218&#45;solarwinds&#45;hack&#45;nuclear&#45;agency&#45;microsoft/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-solarwinds-hack-nuclear-agency-microsoft/</guid>
+      <description><![CDATA[SolarWinds製セキュリティソフト「Orion」のアップデートファイルが、サイバー攻撃集団によりマルウェアを含むものに置き換えられており、多数の政府機関を狙ったハッキングに利用されていた問題で、アメリカ合衆国エネルギー省と国家核安全保障局(NNSA)のネットワークにハッカーによるアクセスがあったことがわかりました。また、この攻撃に使用されているドメインの押収など対策を行っていたMicrosoftもSolarWinds製ソフトウェアを使っていたことが指摘されています。<p><b><a href="https://gigazine.net/news/20201218&#45;solarwinds&#45;hack&#45;nuclear&#45;agency&#45;microsoft/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 11:29:00 +0900</pubDate>
+      <dc:subject>セキュリティ,</dc:subject>
+      <dc:date>2020-12-18T11:29:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>閲覧履歴や個人情報を盗むChrome向け拡張機能が28個も発見される、被害者はFacebookやInstagramのユーザーなど最大300万人</title>
+      <link>https://gigazine.net/news/20201218&#45;malicious&#45;chrome&#45;extensions/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-malicious-chrome-extensions/</guid>
+      <description><![CDATA[セキュリティ企業のAvastが、個人情報を窃取する機能を持った悪意あるGoogle ChromeおよびMicrosoft Edge向けの拡張機能28個を特定したことを2020年12月17日に発表しました。各拡張機能のダウンロード回数から、被害を受けたユーザーは最大で300万人にのぼると見られています。<p><b><a href="https://gigazine.net/news/20201218&#45;malicious&#45;chrome&#45;extensions/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 11:05:00 +0900</pubDate>
+      <dc:subject>セキュリティ,</dc:subject>
+      <dc:date>2020-12-18T11:05:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>Twitterが認証バッジの付与プロセスをついに再開、その時期とは？</title>
+      <link>https://gigazine.net/news/20201218&#45;twitter&#45;relaunch&#45;verification/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-twitter-relaunch-verification/</guid>
+      <description><![CDATA[Twitterは「認証済みバッジ」の申請システムを2017年から停止していましたが、2021年からついに申請プロセスを再開することがわかりました。新ポリシー導入により、ポリシー要件を満たしていないアカウントの認証バッジが削除されることも想定されています。<p><b><a href="https://gigazine.net/news/20201218&#45;twitter&#45;relaunch&#45;verification/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 11:00:00 +0900</pubDate>
+      <dc:subject>ソフトウェア, ウェブアプリ,</dc:subject>
+      <dc:date>2020-12-18T11:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>GitHubが不要なCookieをすべて削除、Cookieの利用をユーザーに通知する「Cookieバナー」が消滅</title>
+      <link>https://gigazine.net/news/20201218&#45;github&#45;remove&#45;cookie/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-github-remove-cookie/</guid>
+      <description><![CDATA[GitHubが公式ブログを更新し、ユーザーのためにならないCookieをすべて削除すると発表しました。これにより、ウェブサイトを開いた際などに表示される「このサイトはCookieを利用しています」などと書かれたCookieバナーがGitHub上から完全になくなります。<p><b><a href="https://gigazine.net/news/20201218&#45;github&#45;remove&#45;cookie/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 10:52:00 +0900</pubDate>
+      <dc:subject>ネットサービス,</dc:subject>
+      <dc:date>2020-12-18T10:52:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>Twitterがリアルタイム音声チャットルーム「Spaces」をテスト中</title>
+      <link>https://gigazine.net/news/20201218&#45;twitter&#45;spaces&#45;live&#45;audio&#45;chatrooms/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-twitter-spaces-live-audio-chatrooms/</guid>
+      <description><![CDATA[Twitterには2020年6月に音声ツイート機能が実装されており、他にもダイレクトメッセージ(DM)で音声を送信する機能のテストを実施していることが明らかになっていますが、新たにリアルタイムでやり取りする音声チャットルーム「Spaces」をテストしていることが判明しました。<p><b><a href="https://gigazine.net/news/20201218&#45;twitter&#45;spaces&#45;live&#45;audio&#45;chatrooms/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 09:55:00 +0900</pubDate>
+      <dc:subject>ソフトウェア, ネットサービス,</dc:subject>
+      <dc:date>2020-12-18T09:55:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>SaaSが本当に軌道に乗っているかを理解するための売上継続率・総収入継続率などの求め方一覧</title>
+      <link>https://gigazine.net/news/20201218&#45;saasy&#45;math/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-saasy-math/</guid>
+      <description><![CDATA[サブスクリプション型のSaaSを運用するには、ビジネスがうまくいっているのかどうかを期間ごとに分析することが重要になります。個人でサービスを運営しているとなかなか「サービスが軌道に乗っているのかどうか」が分かりづらいものですが、正しくこれを評価するための指標と、指標を算出するための計算式を、スタートアップ向けのコンサルティングサービスを手がけるTalkin' SaaSyがまとめています。<p><b><a href="https://gigazine.net/news/20201218&#45;saasy&#45;math/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 08:00:00 +0900</pubDate>
+      <dc:subject>ネットサービス,</dc:subject>
+      <dc:date>2020-12-18T08:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>「執刀医の誕生日」に手術を行うと患者の死亡率が高くなるという研究結果</title>
+      <link>https://gigazine.net/news/20201218&#45;emergency&#45;surgery&#45;surgeon&#45;birthday/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-emergency-surgery-surgeon-birthday/</guid>
+      <description><![CDATA[カリフォルニア大学ロサンゼルス校の研究チームが、「外科医の誕生日に緊急手術を受けた高齢患者は、他の日に手術を受けた患者よりも30日死亡率(30日以内に亡くなる割合)が高くなる」と発表しました。研究チームは、外的要因が手術の結果に影響を与える可能性が示唆されているとしています。<p><b><a href="https://gigazine.net/news/20201218&#45;emergency&#45;surgery&#45;surgeon&#45;birthday/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 07:00:00 +0900</pubDate>
+      <dc:subject>サイエンス,</dc:subject>
+      <dc:date>2020-12-18T07:00:00+09:00</dc:date>
+    </item>
+
+    <item>
+      <title>科学者たちが「雨が降ると川のギンザケが大量死する」という謎を20年かけて解き明かす</title>
+      <link>https://gigazine.net/news/20201218&#45;mass&#45;coho&#45;salmon&#45;deaths&#45;mystery/</link>
+      <guid isPermaLink="true">https://gigazine.net/news/20201218-mass-coho-salmon-deaths-mystery/</guid>
+      <description><![CDATA[北部太平洋地域に生息するギンザケは淡水の川で生まれ、1～2年を川で暮らしてから海に下り、産卵する時期になると再び河川に戻ってくる降海型の魚です。アメリカ・ワシントン州で発生した「雨が降ると河川のギンザケが大量死してしまう」という謎を調査した研究者らが、およそ20年越しにその原因を突き止めました。<p><b><a href="https://gigazine.net/news/20201218&#45;mass&#45;coho&#45;salmon&#45;deaths&#45;mystery/">続きを読む...</a></b></p>]]></description>
+      <pubDate>Fri, 18 Dec 2020 06:00:00 +0900</pubDate>
+      <dc:subject>サイエンス, 生き物,</dc:subject>
+      <dc:date>2020-12-18T06:00:00+09:00</dc:date>
+    </item>
+
+    
+    </channel>
+</rss>

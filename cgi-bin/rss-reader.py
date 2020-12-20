@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# ライブラリの読み込み
 import cgi
 import cgitb
 import io
@@ -6,13 +7,15 @@ import sys
 
 import feedparser
 
-# エラー内容をブラウザに表示x
+# エラー内容をブラウザに表示
 cgitb.enable()
 # CGI上での標準出力のエンコーディングをUTF-8に設定
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='UTF-8')
-# RSS取得対象
-RSS_URL = 'https://gigazine.net/news/rss_2.0/'
-# 表示用フォーマット
+# RSS取得対象（ローカルデータを使用）
+# RSS_URL = 'https://gigazine.net/news/rss_2.0/' 
+RSS_URL = './data/gigazine_rss_20201220.xml'
+## 表示用フォーマット
+# 全体構成用HTML
 DISP_HTML = '''
 <!DOCTYPE html>
 <html>
@@ -23,39 +26,23 @@ DISP_HTML = '''
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
-    <h1>GIGAZINE RSSReader</h1>
+    <a href="../index.html">
+        <h1>GIGAZINE RSSReader</h1>
+    </a>
     <hr>
     <div>
     <form action="/cgi-bin/rss-reader.py" method="POST">
         カテゴリ：
         <select name="category" required>
             <option value=""></option>
-            <option value="アート">アート</option>
-            <option value="アニメ">アニメ</option>
-            <option value="インタビュー">インタビュー</option>
             <option value="ウェブアプリ">ウェブアプリ</option>
-            <option value="お知らせ">お知らせ</option>
             <option value="ゲーム">ゲーム</option>
-            <option value="コラム">コラム</option>
-            <option value="サイエンス">サイエンス</option>
             <option value="セキュリティ">セキュリティ</option>
-            <option value="ソフトウェア">ソフトウェア</option>
-            <option value="デザイン">デザイン</option>
             <option value="ネットサービス">ネットサービス</option>
-            <option value="ハードウェア">ハードウェア</option>
-            <option value="ピックアップ">ピックアップ</option>
             <option value="ヘッドライン">ヘッドライン</option>
-            <option value="マンガ">マンガ</option>
             <option value="メモ">メモ</option>
-            <option value="モバイル">モバイル</option>
             <option value="レビュー">レビュー</option>
-            <option value="映画">映画</option>
-            <option value="試食">試食</option>
-            <option value="取材">取材</option>
-            <option value="乗り物">乗り物</option>
-            <option value="食">食</option>
             <option value="生き物">生き物</option>
-            <option value="動画">動画</option>
         </select>
         <input type="submit" value="取得">
         <input type="button" onclick="location.href='/cgi-bin/rss-reader.py'" value="リセット">
@@ -64,13 +51,12 @@ DISP_HTML = '''
     <div id="result">
         [[result]]
     </div>
-    <div>
-        <!-- <input type="button" onclick="location.href='/index.html'" value="TOPへ"> -->
-    </div>
 </body>
 </html>
 '''
+# 取得結果の件数表示用HTML
 DISP_STAT = '<b>[[category]]</b>について、<b>[[count]]</b>件の記事が見つかりました。\n\t\t'
+# 取得結果の詳細表示用HTML
 DISP_RESULT = ''' 
 <h3><a href="[[link]]"  target="_blank" rel="noopener noreferrer">[[title]]</a>([[categories]])</h3>\n\t\t
 <p>[[description]]</p><br>\n\t\t
@@ -89,7 +75,7 @@ def read_rss_info(param):
             categories = e.tags[0]['term'].rstrip(',')
 
         if param in categories:
-            count += 1
+            count = count + 1
             ret_rss = ret_rss + DISP_RESULT
             ret_rss = ret_rss.replace('[[link]]', e.link)
             ret_rss = ret_rss.replace('[[title]]', e.title)

@@ -11,8 +11,9 @@ import feedparser
 cgitb.enable()
 # CGI上での標準出力のエンコーディングをUTF-8に設定
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='UTF-8')
-# RSS取得対象
-RSS_URL = 'https://gigazine.net/news/rss_2.0/'
+# RSS取得対象（ローカルデータを使用）
+# RSS_URL = 'https://gigazine.net/news/rss_2.0/' 
+RSS_URL = './data/gigazine_rss_20201220.xml'
 ## 表示用フォーマット
 # 全体構成用HTML
 DISP_HTML = '''
